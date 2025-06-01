@@ -71,6 +71,16 @@ const certificationsData = [
     skills: ["Data Structures", "Algorithms", "Problem Solving", "Java"],
     logo: "https://cdn.worldvectorlogo.com/logos/infosys-3.svg",
   },
+  {
+    id: 7,
+    name: "MongoDB",
+    organization: "MongoDB",
+    issueDate: "June 2025",
+    credentialId: "NA",
+    credentialURL: "https://www.credly.com/badges/d16db66d-cdd0-423c-bdc5-f4d7381f0ac0/public_url",
+    skills: ["CRUD Operations", "Aggregation", "Document Model"],
+    logo: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg",
+  },
 ]
 
 export default function Certifications() {
