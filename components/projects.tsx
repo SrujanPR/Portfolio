@@ -341,16 +341,6 @@ function ProjectCard({ project, index }) {
                 <Github className="mr-2 h-4 w-4 text-black" /> Code
               </a>
             </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              className="border-cyan-500/50 text-black hover:bg-cyan-500/10 group-hover:border-cyan-500/70"
-              asChild
-            >
-              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                <Github className="mr-2 h-4 w-4 text-black" /> Live Demo
-              </a>
-            </Button>
           </motion.div>
         </motion.div>
       </CardContent>
