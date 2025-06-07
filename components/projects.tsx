@@ -50,14 +50,22 @@ const projectsData = [
   },
   {
     id: 6,
-    title: "Sorting Visualizer",
+    title: "Qryptic Horizon",
     description:
-      "Interactive visualization tool for learning sorting algorithms. Users can generate or input arrays and see the sorting process step-by-step.",
-    tags: ["Data Structures & Alogrithms", "JavaScript", "HTML", "CSS"],
-    githubUrl: "https://github.com/SrujanPR/weather-app",
+      "Qryptic Horizon is a sleek and powerful QR code generator that lets you customize colors, sizes, and styles effortlessly. With a built-in AI optimization feature, it smartly enhances your QR code’s reliability and scan quality. Generate, download in multiple formats, and revisit your history all in one smooth experience.",
+    tags: ["React", "JavaScript", "TypeScript", "NextJS", "TailwindCSS"],
+    githubUrl: "https://github.com/SrujanPR/Qryptic-Horizon",
   },
   {
     id: 7,
+    title: "Gridify",
+    description:
+      "Gridify is a visual CSS Grid generator built with React, Next.js, and Tailwind. Users can customize rows, columns, and gaps to create unique layouts. It instantly generates clean HTML and CSS code for any grid design. Perfect for developers and designers to speed up layout creation.",
+    tags: ["React", "JavaScript", "TypeScript", "NextJS", "TailwindCSS"],
+    githubUrl: "https://github.com/SrujanPR/Gridify",
+  },
+  {
+    id: 8,
     title: "Flappy Bird",
     description:
       "This project brings the simple, addictive gameplay to a Java environment, complete with custom graphics and animation. Fly the bird through the pipes, gain points, and try to beat your high score!",
@@ -65,7 +73,15 @@ const projectsData = [
     githubUrl: "https://github.com/SrujanPR/Flappy-Bird",
   },
   {
-    id: 8,
+    id: 9,
+    title: "Flappy Bird",
+    description:
+      "This project brings the simple, addictive gameplay to a Java environment, complete with custom graphics and animation. Fly the bird through the pipes, gain points, and try to beat your high score!",
+    tags: ["Java", "Swing", "Event Handling"],
+    githubUrl: "https://github.com/SrujanPR/Flappy-Bird",
+  },
+  {
+    id: 10,
     title: "PDF Summarizer BOT ",
     description:
       "Interactive PDF assistant powered by cutting-edge Gemini's Generative AI language model! This Bot enables you to interact with your PDFs in a whole new way, extracting information, summarizing content, and much more.",
@@ -323,6 +339,16 @@ function ProjectCard({ project, index }) {
             >
               <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-4 w-4 text-black" /> Code
+              </a>
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-cyan-500/50 text-black hover:bg-cyan-500/10 group-hover:border-cyan-500/70"
+              asChild
+            >
+              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                <Github className="mr-2 h-4 w-4 text-black" /> Live Demo
               </a>
             </Button>
           </motion.div>
