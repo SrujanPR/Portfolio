@@ -67,7 +67,7 @@ const certificationsData = [
     organization: "Infosys",
     issueDate: "June 2024",
     credentialId: "NA",
-    credentialURL: "../public/DSA Infosys Certificate.pdf",
+    credentialURL: "/DSA Infosys Certificate.pdf",
     skills: ["Data Structures", "Algorithms", "Problem Solving", "Java"],
     logo: "https://cdn.worldvectorlogo.com/logos/infosys-3.svg",
   },
