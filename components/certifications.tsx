@@ -16,7 +16,7 @@ const certificationsData = [
     organization: "TATA",
     issueDate: "June 2025",
     credentialId: "55T7XDaLzYFbBhZ6o",
-    credentialURL: "/TATA GenAI Powered Data Analytics Job Simulation.pdf",
+    credentialURL: "/TATA.pdf",
     skills: ["Data Analytics", "Business Interpretation", "Generative AI"],
     logo: "https://cdn.worldvectorlogo.com/logos/tata-logo.svg",
   },
