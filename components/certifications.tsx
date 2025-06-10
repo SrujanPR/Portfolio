@@ -12,7 +12,7 @@ import Image from "next/image"
 const certificationsData = [
   {
     id: 1,
-    name: "GenAI Powered Data	Analytics	Job	Simulation",
+    name: "TATA GenAI Powered Data Analytics Job Simulation",
     organization: "TATA",
     issueDate: "June 2025",
     credentialId: "55T7XDaLzYFbBhZ6o",
