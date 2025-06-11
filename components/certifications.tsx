@@ -22,6 +22,16 @@ const certificationsData = [
   },
   {
     id: 2,
+    name: "Deloitte Data Analytics Job Simulation",
+    organization: "Deloitte",
+    issueDate: "June 2025",
+    credentialId: "7363vRTDZhdKmEALy",
+    credentialURL: "/Deloitte.pdf",
+    skills: ["Data Analytics", "Data Modelling", "Tableau" , "Spreadsheets"],
+    logo: "https://cdn.worldvectorlogo.com/logos/deloitte-2.svg",
+  },
+  {
+    id: 3,
     name: "The Complete 2024 Web Developement Bootcamp",
     organization: "Udemy",
     issueDate: "April 2024",
@@ -31,7 +41,7 @@ const certificationsData = [
     logo: "https://static.vecteezy.com/system/resources/previews/046/437/277/non_2x/udemy-transparent-logo-free-png.png",
   },
   {
-    id: 3,
+    id: 4,
     name: "The Complete Python Pro Bootcamp",
     organization: "Udemy",
     issueDate: "Jun 2024",
@@ -41,7 +51,7 @@ const certificationsData = [
     logo: "https://static.vecteezy.com/system/resources/previews/046/437/277/non_2x/udemy-transparent-logo-free-png.png",
   },
   {
-    id: 4,
+    id: 5,
     name: "Programming with Python Professional Certificate",
     organization: "LinkedIn Learning",
     issueDate: "Sep 2024",
@@ -52,7 +62,7 @@ const certificationsData = [
     logo: "https://cdn.worldvectorlogo.com/logos/linkedin-icon-3.svg",
   },
   {
-    id: 5,
+    id: 6,
     name: "Artificial Intelligence Fundamentals",
     organization: "IBM Skills Build",
     issueDate: "Dec 2024",
@@ -62,7 +72,7 @@ const certificationsData = [
     logo: "https://static.vecteezy.com/system/resources/previews/021/515/152/non_2x/ibm-brand-symbol-software-computer-logo-white-design-illustration-with-blue-background-free-vector.jpg",
   },
   {
-    id: 6,
+    id: 7,
     name: "Networking Basics",
     organization: "Cisco",
     issueDate: "DEc 2024",
@@ -72,7 +82,7 @@ const certificationsData = [
     logo: "https://cdn.worldvectorlogo.com/logos/cisco-2.svg",
   },
   {
-    id: 7,
+    id: 8,
     name: "Data Structures and Algorithms",
     organization: "Infosys",
     issueDate: "June 2024",
@@ -82,7 +92,7 @@ const certificationsData = [
     logo: "https://cdn.worldvectorlogo.com/logos/infosys-3.svg",
   },
   {
-    id: 8,
+    id: 9,
     name: "MongoDB",
     organization: "MongoDB",
     issueDate: "June 2025",
