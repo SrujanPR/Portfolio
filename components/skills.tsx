@@ -43,6 +43,7 @@ const skillsCategories = [
       { name: "Pandas", logo: "https://cdn.worldvectorlogo.com/logos/pandas.svg" },
       { name: "Seaborn", logo: "https://cdn.worldvectorlogo.com/logos/seaborn-1.svg" },
       { name: "Numpy", logo: "https://cdn.worldvectorlogo.com/logos/numpy-1.svg" },
+      { name: "LangChain", logo: "https://cdn.worldvectorlogo.com/logos/langchain-1.svg" },
     ],
   },
   {
