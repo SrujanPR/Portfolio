@@ -43,7 +43,7 @@ const skillsCategories = [
       { name: "Pandas", logo: "https://cdn.worldvectorlogo.com/logos/pandas.svg" },
       { name: "Seaborn", logo: "https://cdn.worldvectorlogo.com/logos/seaborn-1.svg" },
       { name: "Numpy", logo: "https://cdn.worldvectorlogo.com/logos/numpy-1.svg" },
-      { name: "LangChain", logo: "https://cdn.worldvectorlogo.com/logos/langchain-1.svg" },
+      { name: "LangChain", logo: "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/logos/langchain-ipuhh4qo1jz5ssl4x0g2a.png/langchain-dp1uxj2zn3752pntqnpfu2.png?_a=DATAdtAAZAA0" },
     ],
   },
   {
