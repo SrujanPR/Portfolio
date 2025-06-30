@@ -18,6 +18,14 @@ const projectsData = [
   },
   {
     id: 2,
+    title: "Animal Classification",
+    description:
+      "This is an AI Powered Image Classification System that identifies wild Aniamls(Cheetah, Leopard, Tiger) using Deep Learning + Computer Vision + Transfer Learning, this project leverages EfficientNetV2-S, to deliver high accuracy animal identification.",
+    tags: ["CNN", "Transfer Learning", "EfficientNetV2", "Pytorch", "Flask", "Computer Vision"],
+    githubUrl: "https://github.com/SrujanPR/Animal-Classification",
+  },
+  {
+    id: 3,
     title: "Simplify Tax",
     description:
       "AI-powered tool for Indian taxpayers. Automates tax filing and optimization by reading statements, classifying income, calculating liabilities, and recommending the best tax regime and savings.",
@@ -25,7 +33,7 @@ const projectsData = [
     githubUrl: "https://github.com/SrujanPR/Simplify-Tax",
   },
   {
-    id: 3,
+    id: 4,
     title: "AI Diagnostic Assistant for Remote Areas",
     description:
       "AI-powered tool using multiple intelligent agents and Google's Gemini model for AI-driven differential diagnosis in remote/underserved healthcare, based on patient data.",
@@ -33,7 +41,7 @@ const projectsData = [
     githubUrl: "https://github.com/SrujanPR/AI-Diagnostic-Assistant",
   },
   {
-    id: 4,
+    id: 5,
     title: "Spam Email Classifier",
     description:
       "A machine learning web application that classifies whether an email subject line is Spam or Not Spam using a Naive Bayes model. Built using Python, Flask, and scikit-learn.",
@@ -41,7 +49,7 @@ const projectsData = [
     githubUrl: "https://github.com/SrujanPR/Spam-Email-Classifier",
   },
   {
-    id: 5,
+    id: 6,
     title: "Vehicle Detection and Counting using YOLO11",
     description:
       "Real-time vehicle detection and counting using YOLOv11 and OpenCV. Processes video, tracks vehicles crossing a red line. Provides live visualizations of detections and counts.",
@@ -49,7 +57,7 @@ const projectsData = [
     githubUrl: "https://github.com/SrujanPR/Vehicle-Detection-and-Counter-using-Yolo11",
   },
   {
-    id: 6,
+    id: 7,
     title: "Qryptic Horizon",
     description:
       "Qryptic Horizon is a sleek and powerful QR code generator that lets you customize colors, sizes, and styles effortlessly. With a built-in AI optimization feature, it smartly enhances your QR code’s reliability and scan quality. Generate, download in multiple formats, and revisit your history all in one smooth experience.",
@@ -57,20 +65,12 @@ const projectsData = [
     githubUrl: "https://github.com/SrujanPR/Qryptic-Horizon",
   },
   {
-    id: 7,
+    id: 8,
     title: "Gridify",
     description:
       "Gridify is a visual CSS Grid generator built with React, Next.js, and Tailwind. Users can customize rows, columns, and gaps to create unique layouts. It instantly generates clean HTML and CSS code for any grid design. Perfect for developers and designers to speed up layout creation.",
     tags: ["React", "JavaScript", "TypeScript", "NextJS", "TailwindCSS"],
     githubUrl: "https://github.com/SrujanPR/Gridify",
-  },
-  {
-    id: 8,
-    title: "Flappy Bird",
-    description:
-      "This project brings the simple, addictive gameplay to a Java environment, complete with custom graphics and animation. Fly the bird through the pipes, gain points, and try to beat your high score!",
-    tags: ["Java", "Swing", "Event Handling"],
-    githubUrl: "https://github.com/SrujanPR/Flappy-Bird",
   },
   {
     id: 9,
