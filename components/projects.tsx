@@ -4,10 +4,21 @@ import { useState, useRef, useEffect } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Github, Code } from "lucide-react"
+import { Github, Code, ExternalLink } from "lucide-react"
+import Image from "next/image"
 
-// Sample project data - add more projects here
-const projectsData = [
+type Project = {
+  id: number
+  title: string
+  description: string
+  tags: string[]
+  githubUrl: string
+  liveUrl?: string
+  imageUrl?: string
+}
+
+// Sample project data - now supports liveUrl and imageUrl
+const projectsData: Project[] = [
   {
     id: 1,
     title: "Info-Bot",
@@ -15,6 +26,8 @@ const projectsData = [
       "RAG based AI assistant for college website. This is designed to help users navigate and understand the resources, rules, and offerings of a college website. Whether you're a prospective student or a current one, this chatbot ensures that you get the right answers — fast and accurately.",
     tags: ["Python", "FastAPI", "FAISS", "JavaScript", "Google Gemini"],
     githubUrl: "https://github.com/SrujanPR/Info-Bot",
+    liveUrl: "", // Add your hosted link here if available
+    imageUrl: "https://github.com/SrujanPR/Info-Bot/raw/main/image2.png",
   },
   {
     id: 2,
@@ -23,6 +36,8 @@ const projectsData = [
       "This is an AI Powered Image Classification System that identifies wild Aniamls(Cheetah, Leopard, Tiger) using Deep Learning + Computer Vision + Transfer Learning, this project leverages EfficientNetV2-S, to deliver high accuracy animal identification.",
     tags: ["CNN", "Transfer Learning", "EfficientNetV2", "Pytorch", "Flask", "Computer Vision"],
     githubUrl: "https://github.com/SrujanPR/Animal-Classification",
+    liveUrl: "",
+    imageUrl: "https://github.com/SrujanPR/Animal-Classification/raw/master/Screenshot1.png",
   },
   {
     id: 3,
@@ -31,6 +46,8 @@ const projectsData = [
       "AI-powered tool for Indian taxpayers. Automates tax filing and optimization by reading statements, classifying income, calculating liabilities, and recommending the best tax regime and savings.",
     tags: ["AI Agents[CrewAI]", "Python", "Tailwind CSS", "JavaScript"],
     githubUrl: "https://github.com/SrujanPR/Simplify-Tax",
+    liveUrl: "",
+    imageUrl: "https://github.com/SrujanPR/Simplify-Tax/raw/main/Sample.png",
   },
   {
     id: 4,
@@ -39,6 +56,8 @@ const projectsData = [
       "AI-powered tool using multiple intelligent agents and Google's Gemini model for AI-driven differential diagnosis in remote/underserved healthcare, based on patient data.",
     tags: ["Streamlit", "CrewAI", "Python", "LiteLLM"],
     githubUrl: "https://github.com/SrujanPR/AI-Diagnostic-Assistant",
+    liveUrl: "",
+    imageUrl: "https://github.com/SrujanPR/AI-Diagnostic-Assistant/raw/main/Sample.png",
   },
   {
     id: 5,
@@ -47,6 +66,8 @@ const projectsData = [
       "A machine learning web application that classifies whether an email subject line is Spam or Not Spam using a Naive Bayes model. Built using Python, Flask, and scikit-learn.",
     tags: ["HTML & CSS", "Flask", "Pandas", "Scikitlearn"],
     githubUrl: "https://github.com/SrujanPR/Spam-Email-Classifier",
+    liveUrl: "",
+    imageUrl: "https://github.com/SrujanPR/Spam-Email-Classifier/raw/main/Sample.png",
   },
   {
     id: 6,
@@ -55,6 +76,8 @@ const projectsData = [
       "Real-time vehicle detection and counting using YOLOv11 and OpenCV. Processes video, tracks vehicles crossing a red line. Provides live visualizations of detections and counts.",
     tags: ["Yolo11", "OpenCV", "PyTorch", "Numpy"],
     githubUrl: "https://github.com/SrujanPR/Vehicle-Detection-and-Counter-using-Yolo11",
+    liveUrl: "",
+    imageUrl: "https://github.com/SrujanPR/Vehicle-Detection-and-Counter-using-Yolo11/raw/main/Output_Sample_image.png",
   },
   {
     id: 7,
@@ -63,6 +86,8 @@ const projectsData = [
       "Qryptic Horizon is a sleek and powerful QR code generator that lets you customize colors, sizes, and styles effortlessly. With a built-in AI optimization feature, it smartly enhances your QR code’s reliability and scan quality. Generate, download in multiple formats, and revisit your history all in one smooth experience.",
     tags: ["React", "JavaScript", "TypeScript", "NextJS", "TailwindCSS"],
     githubUrl: "https://github.com/SrujanPR/Qryptic-Horizon",
+    liveUrl: "https://qryptic-horizon.vercel.app/",
+    imageUrl: "/qryptic-horizon-qr-generator.png",
   },
   {
     id: 8,
@@ -71,6 +96,8 @@ const projectsData = [
       "Gridify is a visual CSS Grid generator built with React, Next.js, and Tailwind. Users can customize rows, columns, and gaps to create unique layouts. It instantly generates clean HTML and CSS code for any grid design. Perfect for developers and designers to speed up layout creation.",
     tags: ["React", "JavaScript", "TypeScript", "NextJS", "TailwindCSS"],
     githubUrl: "https://github.com/SrujanPR/Gridify",
+    liveUrl: "https://gridify-delta.vercel.app/",
+    imageUrl: "/css-grid-generator-ui.png",
   },
   {
     id: 9,
@@ -79,6 +106,8 @@ const projectsData = [
       "This project brings the simple, addictive gameplay to a Java environment, complete with custom graphics and animation. Fly the bird through the pipes, gain points, and try to beat your high score!",
     tags: ["Java", "Swing", "Event Handling"],
     githubUrl: "https://github.com/SrujanPR/Flappy-Bird",
+    liveUrl: "",
+    imageUrl: "/flappy-bird-java-game.png",
   },
   {
     id: 10,
@@ -87,13 +116,15 @@ const projectsData = [
       "Interactive PDF assistant powered by cutting-edge Gemini's Generative AI language model! This Bot enables you to interact with your PDFs in a whole new way, extracting information, summarizing content, and much more.",
     tags: ["LangChain", "PyPDF2", "Python", "Streamlit"],
     githubUrl: "https://github.com/SrujanPR/PDF-Summarizer-BOT",
+    liveUrl: "",
+    imageUrl: "/pdf-summarizer-bot-ui.png",
   },
 ]
 
 export default function Projects() {
   const [visibleProjects, setVisibleProjects] = useState(4)
   const [animateNewProjects, setAnimateNewProjects] = useState(false)
-  const sectionRef = useRef(null)
+  const sectionRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
@@ -105,19 +136,15 @@ export default function Projects() {
   // Reset animation state when new projects are shown
   useEffect(() => {
     if (visibleProjects > 4) {
-      // Brief delay before triggering animation for new projects
       const timer = setTimeout(() => {
         setAnimateNewProjects(true)
       }, 100)
-
       return () => clearTimeout(timer)
     }
   }, [visibleProjects])
 
   const showMoreProjects = () => {
-    console.log("Showing all projects, total:", projectsData.length)
     setVisibleProjects(projectsData.length)
-    // Reset animation state for new projects
     setAnimateNewProjects(false)
   }
 
@@ -125,17 +152,6 @@ export default function Projects() {
   const hasMoreProjects = visibleProjects < projectsData.length
 
   // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.05,
-      },
-    },
-  }
-
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -150,20 +166,7 @@ export default function Projects() {
     },
   }
 
-  // Projects added after clicking "Show All Projects"
-  const newProjectsVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 12,
-        duration: 0.5,
-      },
-    },
-  }
+  const newProjectsVariants = itemVariants
 
   return (
     <motion.section id="projects" ref={sectionRef} className="py-20 bg-black/50 relative" style={{ opacity }}>
@@ -265,11 +268,23 @@ export default function Projects() {
   )
 }
 
-// Extracted ProjectCard component for cleaner code
-function ProjectCard({ project, index }) {
+// Project Card with image preview and Live Demo button
+function ProjectCard({ project, index }: { project: any; index: number }) {
   return (
     <Card className="overflow-hidden border-slate-800 bg-slate-900/50 backdrop-blur-sm hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300 h-full group">
-      {/* Gradient line at the top of the card */}
+      {/* Project preview image */}
+      <div className="relative w-full h-44 md:h-48 lg:h-52 overflow-hidden">
+        <Image
+          src={project.imageUrl || "/placeholder.svg?height=360&width=720&query=project%20screenshot"}
+          alt={`${project.title} screenshot`}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+        <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+      </div>
+
+      {/* Gradient line under image */}
       <motion.div
         className="h-1.5 bg-gradient-to-r from-cyan-400/70 to-purple-500/70 group-hover:from-cyan-400 group-hover:to-purple-500 transition-all duration-300"
         initial={{ scaleX: 0 }}
@@ -296,7 +311,7 @@ function ProjectCard({ project, index }) {
           transition={{ duration: 0.3, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          {project.tags.map((tag, tagIndex) => (
+          {project.tags.map((tag: string, tagIndex: number) => (
             <motion.span
               key={tag}
               className="px-2 py-1 bg-black/60 backdrop-blur-sm text-xs rounded-full text-cyan-400 border border-cyan-500/20 group-hover:border-cyan-500/40 group-hover:text-cyan-300 transition-all duration-300"
@@ -342,6 +357,21 @@ function ProjectCard({ project, index }) {
               </a>
             </Button>
           </motion.div>
+
+          {project.liveUrl && project.liveUrl.trim().length > 0 && (
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-purple-500/50 text-black hover:bg-purple-500/10 group-hover:border-purple-500/70"
+                asChild
+              >
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="mr-2 h-4 w-4 text-black" /> Live Demo
+                </a>
+              </Button>
+            </motion.div>
+          )}
         </motion.div>
       </CardContent>
     </Card>
