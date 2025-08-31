@@ -78,13 +78,6 @@ const skillsCategories = [
       { name: "Microsoft Tools", logo: "https://cdn.worldvectorlogo.com/logos/office-1.svg" },
     ],
   },
-  {
-    category: "Operating Systems",
-    skills: [
-      { name: "Windows", logo: "https://skillicons.dev/icons?i=windows" },
-      { name: "Ubuntu", logo: "https://skillicons.dev/icons?i=ubuntu" },
-    ],
-  },
 ]
 
 export default function Skills() {
