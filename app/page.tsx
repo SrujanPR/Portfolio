@@ -10,6 +10,7 @@ import Hobbies from "@/components/hobbies"
 import Projects from "@/components/projects"
 import Certifications from "@/components/certifications"
 import ScrollIndicator from "@/components/scroll-indicator"
+import Experience from "@/components/experience"
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Hero />
       <About />
       <Education />
+      <Experience />
       <Skills />
       <Projects />
       <Certifications />
