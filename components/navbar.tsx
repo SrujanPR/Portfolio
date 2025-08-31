@@ -27,6 +27,7 @@ export default function Navbar() {
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Education", href: "#education" },
+    { name: "Experience", href: "#experience" }, // added
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Certifications", href: "#certifications" },
@@ -85,7 +86,7 @@ export default function Navbar() {
               asChild
             >
               <a
-                href="https://docs.google.com/document/d/1Lj4zmTSGS0NmAKlXx_yg5_iM2k4g312Z_BwOtAUKxng/edit?usp=sharing"
+                href="https://docs.google.com/document/d/1UmtIBUTAQXqn3ZJ1Rb3EKWG6tB0_1gLkKBg9ll1erqI/edit?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
               >
