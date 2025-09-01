@@ -119,6 +119,26 @@ const projectsData: Project[] = [
     liveUrl: "",
     imageUrl: "/pdf-summarizer-bot-ui.png",
   },
+  {
+    id: 11,
+    title: "U&I Belaku Website",
+    description:
+      "This is a static website built for Belaku Learning Center, a part of U&I Trust, a volunteer-run NGO that empowers disadvantaged children and individuals across India.The website showcases the impact stories of kids, volunteer experiences, community journey, and information about Belaku Learning Center. It also features a contact form powered by EmailJS for easy communication.",
+    tags: ["React", "JavaScript", "HTML", "CSS", "API"],
+    githubUrl: "https://github.com/SrujanPR/Belaku-Website",
+    liveUrl: "https://belaku.vercel.app/",
+    imageUrl: "/belaku.png",
+  },
+  {
+    id: 12,
+    title: "Wordle",
+    description:
+      "Wordle is a game where players have six attempts to guess a five-letter word, receiving feedback through colored tiles that indicate correct letters and their placement.",
+    tags: ["React", "Typescript", "TailwindCSS", "API"],
+    githubUrl: "https://github.com/SrujanPR/Wordle",
+    liveUrl: "https://wordle-phi-taupe.vercel.app/",
+    imageUrl: "/wordle.png",
+  },
 ]
 
 export default function Projects() {
