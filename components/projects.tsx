@@ -127,7 +127,7 @@ const projectsData: Project[] = [
     tags: ["React", "JavaScript", "HTML", "CSS", "API"],
     githubUrl: "https://github.com/SrujanPR/Belaku-Website",
     liveUrl: "https://belaku.vercel.app/",
-    imageUrl: "/belaku.png",
+    imageUrl: "/belaku1.png",
   },
   {
     id: 12,
